@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.docmanager.entity.Assess" table="doc_evaluation">
+  <id name="assessId" column="Evaluation_id" type="int">
+   <generator class="increment" />
+  </id>
+  <property name="time" column="Time" type="string"
+    />
+  <property name="rank" column="rank" type="int"
+   />
+  <property name="assessType" column="Evaluation_type" type="int"
+   />
+  <property name="briefAssess" column="Brief_evaluation" type="string"
+   />
+  <property name="problem" column="Problem" type="string"
+  />
+  <property name="idea" column="Idea" type="string"
+  />
+  <property name="experiment" column="Experiment" type="string"
+   />
+  <property name="contribution" column="Contribution" type="string"
+   />
+  <property name="improvement" column="Improvement" type="string"
+  />
+  <property name="state" column="state" type="int"
+/>
+  <property name="docId" column="Doc_id" type="int"
+   />
+  <property name="userId" column="User_id" type="int"
+   />
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="action" location="0,0" size="0,0">
+    <action name="login" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+      <result name="admin_success">
+        <resourceEdge source="admin_success" routing="0" target="admin.jsp" />
+      </result>
+      <result name="failure">
+        <resourceEdge source="failure" routing="0" target="failure.jsp" />
+      </result>
+    </action>
+    <action name="docAdd" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="getDocs" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="updateDoc" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="getDocById" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="docEdit" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="docDelete" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="briefAssess" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="detailedAssess" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="detailedSearch" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="simpleSearch" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="searchByTag" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="download" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getDraft" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="getDraftById" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="detailsuccess" />
+      <result name="failure" />
+    </action>
+    <action name="updateBrief" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="updateDetail" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="getTypes" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="getDocMeta" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+  </package>
+  <webResource name="index.jsp" path="/index.jsp" location="0,0" size="0,0" />
+  <webResource name="admin.jsp" path="/admin.jsp" location="0,0" size="0,0" />
+  <webResource name="failure.jsp" path="/failure.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.docmanager.entity.DocAttach" table="doc_attachment">
+  <id name="attachId" column="Attach_id" type="int">
+   <generator class="increment" />
+  </id>
+  <property name="docId" column="Doc_id" type="int"
+   not-null="true" />
+  <property name="attachType" column="Attach_type" type="string"
+   not-null="true" />
+  <property name="attachName" column="Attach_name" type="string"
+   not-null="true" />
+  <property name="attachAddress" column="Attach_address" type="string"
+   not-null="true" />
+  <property name="userId" column="User_id" type="int"
+   not-null="true" />
+    </class>
+</hibernate-mapping>

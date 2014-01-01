@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<!-- 设置浏览器是否缓存静态内容,默认值为true(生产环境下使用),开发阶段最好关闭 -->
+    <constant name="struts.serve.static.browserCache" value="false" />
+    <!-- 当struts的配置文件修改后,系统是否自动重新加载该文件,默认值为false(生产环境下使用),开发阶段最好打开 -->
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <!-- 开发模式下使用,这样可以打印出更详细的错误信息 -->
+    <constant name="struts.devMode" value="true" />
+    <!--解决乱码    -->
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+    <constant name="struts.multipart.maxSize" value="10701096"/>
+
+    
+    
+    
+    <package name="action" namespace="/" extends="struts-default">
+        <action name="login" class="loginAction" method="login">
+            <result name="success">/index.jsp</result>
+            <result name="admin_success">/admin.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+         <action name="docAdd" class="docAddAction" method="docAdd">
+            <result name="success" type="redirect">/getDocs</result>
+            <result name="failure">/failure.jsp</result>
+            <param name="savePath">/attachment</param>  
+        </action>
+        <action name="getDocs" class="docAddAction" method="getDocs">
+            <result name="success">/my_literature.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>        
+        <action name="updateDoc" class="docAddAction" method="updateDoc">
+            <result name="success">/my_literature.jsp</result>
+            <result name="failure">/failure.jsp</result>
+            <param name="savePath">/attachment</param>  
+            
+        </action>
+        <action name="getDocById" class="docAddAction" method="getDocById">
+            <result name="success">/document.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        
+        <action name="docEdit" class="docAddAction" method="getDocById">
+            <result name="success">/update.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="docDelete" class="docAddAction" method="docDelete">
+            <result name="success" type="redirect">/getDocs</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+
+        <action name="briefAssess" class="assessAction" method="briefAssess">
+            <result name="success"  type="redirect">/getDocById?docId=${docId}</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="detailedAssess" class="assessAction" method="detailedAssess">
+            <result name="success" type="redirect">/getDocById?docId=${docId}</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="detailedSearch" class="searchAction" method="detailedSearch">
+            <result name="success" >/showSearch.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="simpleSearch" class="searchAction" method="simpleSearch">
+            <result name="success" >/showSearch.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="searchByTag" class="searchAction" method="searchByTag">
+            <result name="success" >/showSearch.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+
+        <action name="download" class="downloadAction" >
+          <result name="success" type="stream">
+               <param name="inputName">downloadFile</param>
+               <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+           </result>
+        </action>
+        <action name="getDraft" class="assessAction" method="getDraft">
+            <result name="success" >/my_draft.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>        
+        <action name="getDraftById" class="assessAction" method="getDraftById">
+            <result name="success" >/draft.jsp</result>
+            <result name="detailsuccess" >/detaildraft.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="updateBrief" class="assessAction" method="updateBrief">
+            <result name="success" type="redirect" >/getDraft</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="updateDetail" class="assessAction" method="updateDetail">
+            <result name="success" type="redirect" >/getDraft</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        <action name="getTypes" class="docAddAction" method="getTypes">
+            <result name="success"  >/literature_import.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+       
+        
+        
+        
+        
+    </package>
+
+</struts>
